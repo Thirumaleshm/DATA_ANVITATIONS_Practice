@@ -1,0 +1,82 @@
+﻿@model DATA_ANVITATIONS_Practice.Models.Employee
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1 style="color:green;font-weight:bold;text-align:center;">Example with Data Validations</h1>
+        <hr />
+     
+
+        <table align="center">
+            @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+            {
+                <tr>
+                    <td> @Html.LabelFor(x => x.EmployeeName) :</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.EmployeeName)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.EmployeeName)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(x => x.EmployeeID):</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.EmployeeID)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.EmployeeID)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(x => x.ContactNumber):
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.ContactNumber)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.ContactNumber)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(x => x.password):
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.password)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.password)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(x => x.Conformpassword):</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Conformpassword)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.Conformpassword)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(x => x.EmailID):</td>
+                    <td>
+                        @Html.TextBoxFor(x => x.EmailID)
+                        <span style="color:red;"> @Html.ValidationMessageFor(x => x.EmailID)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type="submit" name="SB1" value="Submit" />
+
+                    </td>
+                    <td style="color:red;"> @Html.ValidationSummary()</td>
+                </tr>
+            }
+            </table>
+           
+        
+    </div>
+    <div>
+        @ViewBag.Msg
+    </div>
+
+</body>
+</html>
